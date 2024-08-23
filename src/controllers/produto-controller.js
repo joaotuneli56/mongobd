@@ -11,6 +11,8 @@ exports.post = async(req, res) => {
 }
 
 exports.put = async(req, res) => {
-    await respository.update(req.body)
+    const id = req.params.id
+
+    await respository.update(id, req.body)
     res.status(204).send({mensagem: "Atualizado com sucesso"})
 }
