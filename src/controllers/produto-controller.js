@@ -9,3 +9,8 @@ exports.post = async(req, res) => {
     await respository.create(req.body)
     return res.status(201).sent({mensagem: "Criado com sucesso!"})
 }
+
+exports.put = async(req, res) => {
+    await respository.update(req.body)
+    res.status(204).send({mensagem: "Atualizado com sucesso"})
+}
